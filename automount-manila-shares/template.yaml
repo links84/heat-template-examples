@@ -1,0 +1,45 @@
+heat_template_version: 2016-10-14
+
+description: Example to create manila share , create instance & automount via heat hooks
+
+resources:
+  Manila_share-01:
+    type: OS::Manila::Share
+    properties:
+      access_rules: [{"access_level": String, "access_type": String, "access_to": String}, {"access_level": String, "access_type": String, "access_to": String}, ...]
+      description: String
+      is_public: Boolean
+      metadata: {...}
+      name: String
+      share_network: String
+      share_protocol: String
+      share_type: String
+      size: Integer
+      snapshot: String
+  Instances:
+    type: OS::Nova::Server
+    properties:
+      admin_pass: String
+      availability_zone: String
+      block_device_mapping: [{"volume_size": Integer, "volume_id": String, "snapshot_id": String, "delete_on_termination": Boolean, "device_name": String}, {"volume_size": Integer, "volume_id": String, "snapshot_id": String, "delete_on_termination": Boolean, "device_name": String}, ...]
+      block_device_mapping_v2: [{"boot_index": Integer, "ephemeral_size": Integer, "image": String, "snapshot_id": String, "image_id": String, "swap_size": Integer, "volume_id": String, "ephemeral_format": String, "device_type": String, "device_name": String, "disk_bus": String, "volume_size": Integer, "delete_on_termination": Boolean}, {"boot_index": Integer, "ephemeral_size": Integer, "image": String, "snapshot_id": String, "image_id": String, "swap_size": Integer, "volume_id": String, "ephemeral_format": String, "device_type": String, "device_name": String, "disk_bus": String, "volume_size": Integer, "delete_on_termination": Boolean}, ...]
+      config_drive: Boolean
+      deployment_swift_data: {"object": String, "container": String}
+      diskConfig: String
+      flavor: String
+      flavor_update_policy: String
+      image: String
+      image_update_policy: String
+      key_name: String
+      metadata: {...}
+      name: String
+      networks: [{"port": String, "subnet": String, "floating_ip": String, "tag": String, "uuid": String, "port_extra_properties": {"allowed_address_pairs": [{"ip_address": String, "mac_address": String}, {"ip_address": String, "mac_address": String}, ...], "admin_state_up": Boolean, "binding:vnic_type": String, "value_specs": {...}, "mac_address": String, "port_security_enabled": Boolean, "qos_policy": String}, "allocate_network": String, "fixed_ip": String, "network": String}, {"port": String, "subnet": String, "floating_ip": String, "tag": String, "uuid": String, "port_extra_properties": {"allowed_address_pairs": [{"ip_address": String, "mac_address": String}, {"ip_address": String, "mac_address": String}, ...], "admin_state_up": Boolean, "binding:vnic_type": String, "value_specs": {...}, "mac_address": String, "port_security_enabled": Boolean, "qos_policy": String}, "allocate_network": String, "fixed_ip": String, "network": String}, ...]
+      personality: {...}
+      reservation_id: String
+      scheduler_hints: {...}
+      security_groups: [Value, Value, ...]
+      software_config_transport: String
+      tags: [String, String, ...]
+      user_data: String
+      user_data_format: String
+      user_data_update_policy: String
