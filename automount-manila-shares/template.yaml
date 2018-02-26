@@ -21,10 +21,7 @@ resources:
     properties:
       admin_pass: String
       availability_zone: String
-      block_device_mapping: [{"volume_size": Integer, "volume_id": String, "snapshot_id": String, "delete_on_termination": Boolean, "device_name": String}, {"volume_size": Integer, "volume_id": String, "snapshot_id": String, "delete_on_termination": Boolean, "device_name": String}, ...]
-      block_device_mapping_v2: [{"boot_index": Integer, "ephemeral_size": Integer, "image": String, "snapshot_id": String, "image_id": String, "swap_size": Integer, "volume_id": String, "ephemeral_format": String, "device_type": String, "device_name": String, "disk_bus": String, "volume_size": Integer, "delete_on_termination": Boolean}, {"boot_index": Integer, "ephemeral_size": Integer, "image": String, "snapshot_id": String, "image_id": String, "swap_size": Integer, "volume_id": String, "ephemeral_format": String, "device_type": String, "device_name": String, "disk_bus": String, "volume_size": Integer, "delete_on_termination": Boolean}, ...]
       config_drive: Boolean
-      deployment_swift_data: {"object": String, "container": String}
       diskConfig: String
       flavor: String
       flavor_update_policy: String
